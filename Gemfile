@@ -10,10 +10,8 @@ gem 'rails', '~> 7.1.2'
 # Rails 7.1で導入された trilogy を採用
 gem 'trilogy'
 
-# Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
 # Kredis は redis を使うためのライブラリです。

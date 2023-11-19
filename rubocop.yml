@@ -1,0 +1,6 @@
+AllCops:
+  TargetRubyVersion: 3.2
+
+# frozen_string_literalの強制を無効にする
+Style/FrozenStringLiteralComment:
+  Enabled: false
