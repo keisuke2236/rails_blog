@@ -29,5 +29,3 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :date, :tags, :author, :slide, :contentHtml)
   end
 end
-
-

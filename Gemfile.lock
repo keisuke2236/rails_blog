@@ -131,7 +131,6 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    mysql2 (0.5.5)
     net-imap (0.4.5)
       date
       net-protocol
@@ -162,6 +161,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-mini-profiler (3.1.1)
       rack (>= 1.2.0)
     rack-session (2.0.0)
@@ -262,10 +263,10 @@ DEPENDENCIES
   htmlbeautifier
   jbuilder
   kredis
-  mysql2
   pry-byebug
   pry-rails
   puma (>= 5.0)
+  rack-cors
   rack-mini-profiler
   rails (~> 7.1.2)
   redis (>= 4.0.1)
