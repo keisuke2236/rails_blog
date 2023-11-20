@@ -10,16 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_18_095931) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_20_094912) do
+  create_table "article_tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_tags_on_article_id"
+    t.index ["tag_id"], name: "index_article_tags_on_tag_id"
+  end
+
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
-    t.datetime "date"
-    t.string "tags"
-    t.string "author"
-    t.string "slide"
-    t.text "contentHtml"
+    t.string "title", null: false, comment: "記事タイトル"
+    t.date "date", null: false, comment: "記事の日付"
+    t.text "contentHtml", null: false, comment: "記事の内容"
+    t.string "author", null: false, comment: "記事の著者"
+    t.boolean "slide", default: false, null: false, comment: "スライドの有無"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "article_tags", "articles"
+  add_foreign_key "article_tags", "tags"
 end
